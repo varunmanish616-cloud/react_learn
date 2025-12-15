@@ -17,7 +17,7 @@ export class AuthServices{
             const userAccount=await this.account.create(ID.unique,email,password,name);
             if(userAccount){
                 //call another function
-                this.login({email,password})
+                return this.login({email,password})
             }
             }catch(e){
                 throw e
