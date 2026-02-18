@@ -1,13 +1,13 @@
 const conf={
-    appwriteURL:String(import.meta.env.
+    appwriteUrl:String(import.meta.env.
         VITE_APPWRITE_URL),
-    PROJECT_ID:String(import.meta.env.
+    appwriteProjectId:String(import.meta.env.
         VITE_REACT_APP_PROJECT_ID),
-    URLAPPWRITE_DATABASE_ID:String(import.meta.env.
+    appwriteDatabaseId:String(import.meta.env.
         VITE_DATABASE_ID),
-    BUCKET_ID:String(import.meta.env.
+    appwriteBucketId:String(import.meta.env.
         VITE_APPWRITE_BUCKET_ID),
-    CollectionID:String(import.meta.env.
+    appwriteCollectionId:String(import.meta.env.
         VITE_APPWRITE_COLLECTION_ID)
 }
  

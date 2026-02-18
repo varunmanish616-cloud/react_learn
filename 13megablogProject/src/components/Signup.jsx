@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import authServices from "../appwrite/auth";
-import { data, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
 import { Button, Input, Logo } from "./index";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { use } from "react";
 function Signup() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -18,7 +17,7 @@ function Signup() {
       if (userData) {
         const userData = await authServices.getCurrentUser();
         if (userData) {
-          useDispatch(login(userData));
+          dispatch(login(userData));
           navigate("/");
         }
       }

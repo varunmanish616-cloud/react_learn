@@ -12,11 +12,11 @@ import Github,{githubInfoLoader} from './components/Github/Github.jsx'
 // method One to create Route
 const router=createBrowserRouter([
   {
-    path:'/',
+    path:'/', 
     element:<Layout/>,
-    children:[
+    children:[ 
       {
-        path:"",
+        path:"/",
         element:<Home/>
       },
       {

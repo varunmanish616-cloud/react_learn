@@ -1,13 +1,13 @@
-import { useEffect, useEffectEvent, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {useDispatch} from "react-redux"
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import './App.css'
 import authServices from './appwrite/auth'
-import {login,logOut} from './store/authSlice'
+import {login,logout} from './store/authSlice'
 import {Outlet} from 'react-router-dom'
 function App() {
-  const [loading , serLoading]=useState(true)
+  const [loading , setLoading]=useState(true)
   const dispatch=useDispatch()
   useEffect(() => {
     authServices.getCurrentUser()
@@ -16,10 +16,10 @@ function App() {
         dispatch(login({userData }))
       }
       else{
-        dispatch(logOut())
+        dispatch(logout())
       }
     })
-    .finally(()=>serLoading(false))
+    .finally(()=>setLoading(false))
   }, [])
   return (!loading) ? (
     <div className='min-h-screen flex flex-warp content-between bg-gray-400'>

@@ -21,10 +21,10 @@ const Input=React.forwardRef(function Input({
             ${className}`}
             ref={ref}
             {...props}
-            id={id}
+            id={id} 
              />
         </div>
     )
 })
 
-export default input
+export default Input
